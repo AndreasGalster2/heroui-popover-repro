@@ -100,9 +100,11 @@ export default function ReproPage() {
             HeroUI 3.2.6 / Next 16.4 — dropdown popover max-width repro
           </p>
           <p>
-            Narrow the window below ~533px (or device toolbar → 390px) and
-            click the account row. The w-64 (256px) menu clamps to 48svw
-            (187px at 390px) and the Theme sun icon collapses to 0px.
+            To replicate: open DevTools → toggle device toolbar
+            (Cmd+Shift+M) → set <em>Responsive 390 × 844</em> (or just
+            narrow this window below ~533px). Then click the account row
+            at the bottom. Expected: 256px menu, 16px sun icon. Buggy:
+            187px menu, 0px icon.
           </p>
         </div>
         <div className="mt-auto">
