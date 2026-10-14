@@ -92,12 +92,19 @@ export default function ReproPage() {
 
   return (
     <div className="bg-slate-100 dark:bg-zinc-950">
-      {/* 335px column mimicking the drawer width (86vw at 390px). */}
-      <div className="mx-auto flex min-h-screen w-[335px] max-w-full flex-col border-x border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-        <p className="p-3 text-xs text-slate-400 dark:text-zinc-500">
-          repro: account block cloned 1:1, popover has NO maxWidth
-          workaround — viewport 390px, click the account row
-        </p>
+      {/* Full-width column: control the width with the browser window or
+          the device toolbar. No width scaffolding, no menu workarounds. */}
+      <div className="mx-auto flex min-h-screen w-full flex-col bg-white dark:bg-zinc-900">
+        <div className="space-y-1 p-3 text-xs text-slate-500 dark:text-zinc-400">
+          <p className="font-semibold text-slate-900 dark:text-zinc-100">
+            HeroUI 3.2.6 / Next 16.4 — dropdown popover max-width repro
+          </p>
+          <p>
+            Narrow the window below ~533px (or device toolbar → 390px) and
+            click the account row. The w-64 (256px) menu clamps to 48svw
+            (187px at 390px) and the Theme sun icon collapses to 0px.
+          </p>
+        </div>
         <div className="mt-auto">
           <div className="border-t border-slate-100 px-2.5 pb-2 pt-1.5 dark:border-zinc-800">
             <Dropdown>
